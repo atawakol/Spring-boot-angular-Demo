@@ -20,4 +20,5 @@ public class Product {
     @NonNull
     private String name;
 
+    private boolean discount;
 }

@@ -25,7 +25,8 @@ export class ProductService {
   }
 
   removeProduct(id: number): Observable<any>{
-    return this.http.delete(this.productsUrl + "id");
+    console.log("Delete " + id);
+    return this.http.delete(this.productsUrl + id);
   }
 
   saveProduct(product: any): Observable<any>{

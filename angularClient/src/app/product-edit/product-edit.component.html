@@ -1,6 +1,6 @@
 <mat-card>
   <form #productForm="ngForm" (ngSubmit)="submit(productForm.value)">
-    <mat-card-header><h2>{{product.name ? 'Edit': 'Add'}}</h2></mat-card-header>
+    <mat-card-header><h2>{{ productId ? 'Edit': 'Add'}}</h2></mat-card-header>
     <mat-card-content>
       <mat-form-field>
         <input matInput placeholder="Product Name" name="name" required [(ngModel)]='product.name'>
@@ -8,6 +8,8 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.form.valid">submit</button> 
+      <button mat-raised-button color="secondary" type="button" *ngIf="productId" 
+            (click)="remove(productId)">Remove</button>
       <a mat-button routerLink='/product-list'>Back to List</a>
     </mat-card-actions>
     <mat-card-footer>

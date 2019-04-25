@@ -21,9 +21,14 @@ export class ProductEditComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.productId = params['id'];
+      console.log("id is " + this.productId);
       console.log(this.productId);
       if (this.productId) {
-        this.productService.getProduct(this.productId).subscribe(data => this.product = data);
+        this.productService.getProduct(this.productId).subscribe(data => {
+          this.product = data
+          console.log("Product retrived + " + data);
+        });
+        console.log("Product request sent....");
       }
     });
   }
@@ -36,6 +41,12 @@ export class ProductEditComponent implements OnInit {
     else {
       this.update(form);
     }
+  }
+
+  remove(id:number) {
+    this.productService.removeProduct(id).subscribe(data => {
+      this.goToList();
+    }, error => console.error(error));
   }
 
   goToList(){

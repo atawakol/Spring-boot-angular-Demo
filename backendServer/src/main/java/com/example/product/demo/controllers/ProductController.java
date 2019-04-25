@@ -1,4 +1,4 @@
-package com.example.product.demo;
+package com.example.product.demo.controllers;
 
 import com.example.product.demo.model.Product;
 import com.example.product.demo.repository.ProductRepository;

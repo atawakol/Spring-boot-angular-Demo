@@ -1,0 +1,19 @@
+<mat-card>
+  <form #productForm="ngForm" (ngSubmit)="save(productForm.value)">
+    <mat-card-header><h2>{{product.name ? 'Edit': 'Add'}}</h2></mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Product Name" name="name" required [(ngModel)]='product.name'>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.form.valid">submit</button> 
+      <a mat-button routerLink='/product-list'>Back to List</a>
+    </mat-card-actions>
+    <mat-card-footer>
+      <div class="giphy">
+        <img src="../../favicon.ico" alt="my icon"/>
+      </div>
+    </mat-card-footer>
+  </form>
+</mat-card>

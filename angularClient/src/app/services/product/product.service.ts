@@ -21,7 +21,7 @@ export class ProductService {
   }
 
   getProduct(id: number): Observable<any>{
-    return this.http.get(this.productsUrl + "id");
+    return this.http.get(this.productsUrl + id);
   }
 
   removeProduct(id: number): Observable<any>{
@@ -33,8 +33,9 @@ export class ProductService {
     return this.http.post(this.productsUrl, product);
   }
 
-  updateProduct(product: any): Observable<any>{
-    return this.http.put(this.productsUrl + product.id, product);
+  updateProduct(id:number, product: any): Observable<any>{
+    console.log("Update product ");
+    return this.http.put(this.productsUrl + id, product);
   }
 
 }

@@ -1,5 +1,5 @@
 <mat-card>
-  <form #productForm="ngForm" (ngSubmit)="save(productForm.value)">
+  <form #productForm="ngForm" (ngSubmit)="submit(productForm.value)">
     <mat-card-header><h2>{{product.name ? 'Edit': 'Add'}}</h2></mat-card-header>
     <mat-card-content>
       <mat-form-field>

@@ -7,6 +7,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/product-list', pathMatch: 'full'},
   {path: 'product-list', component: ProductListComponent},
   {path: 'product-add', component: ProductEditComponent},
+  {path: 'product-edit/:id', component: ProductEditComponent},
 ];
 
 @NgModule({
